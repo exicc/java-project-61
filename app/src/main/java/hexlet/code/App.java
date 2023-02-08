@@ -22,8 +22,9 @@ public class App {
             case "0":
                 System.out.println("Exit successful");
                 break;
+
             default:
-                System.out.println("Error, exiting");
+                System.out.println("Unexpected value: " + game);
         }
         scanner.close();
     }
