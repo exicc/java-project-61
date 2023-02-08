@@ -26,12 +26,12 @@ public class Even {
                 System.out.println("Correct!");
                 rightAnswersCount++;
             } else {
-                System.out.println("'" + currentAnswer + "' is wrong answer ;(. Correct answer was " + rightAnswer + ".");
+                System.out.printf("'%s' is wrong answer ;(. Correct answer was %s.%n", currentAnswer, rightAnswer);
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
         }
-        if (rightAnswersCount >=3) {
+        if (rightAnswersCount >= 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
