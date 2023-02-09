@@ -13,18 +13,10 @@ public class App {
         System.out.print("Your choice: ");
         String game = scanner.next();
         switch (game) {
-            case "1":
-                Greeting.userGreeting();
-                break;
-            case "2":
-                Even.isEvenGame();
-                break;
-            case "0":
-                System.out.println("Exit successful");
-                break;
-
-            default:
-                System.out.println("Unexpected value: " + game);
+            case "1" -> Greeting.userGreeting();
+            case "2" -> Even.isEvenGame();
+            case "0" -> System.out.println("Exit successful");
+            default -> System.out.println("Unexpected value: " + game);
         }
         scanner.close();
     }
