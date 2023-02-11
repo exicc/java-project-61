@@ -10,7 +10,7 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         int rightAnswersCount = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 1; i <= 3; i++) {
             int ranNum = (int) ((Math.random() * 100) + 1);
             System.out.println("Question: " + ranNum);
             System.out.print("Your answer: ");
