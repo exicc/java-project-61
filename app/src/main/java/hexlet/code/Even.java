@@ -1,39 +1,28 @@
 package hexlet.code;
 
-import java.util.Scanner;
+import java.util.Random;
 
 public class Even {
+    static int roundsCount = 3;
+
     public static void isEvenGame() {
-        Scanner scanner = new Scanner(System.in);
-        String userName = Greeting.userGreeting();
 
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        int rightAnswersCount = 0;
-        for (int i = 1; i <= 3; i++) {
-            int ranNum = (int) ((Math.random() * 100) + 1);
-            System.out.println("Question: " + ranNum);
-            System.out.print("Your answer: ");
-            String currentAnswer = scanner.next();
+        String[] questionsArr = new String[roundsCount];
+        for (int j = 0; j < roundsCount; j++) {
+            int rnd = new Random().nextInt(10);
+            questionsArr[j] = String.valueOf(rnd);
+        }
 
-            String rightAnswer;
-            if (ranNum % 2 == 0) {
-                rightAnswer = "yes";
+        String[] answersArr = new String[roundsCount];
+        for (int j = 0; j < roundsCount; j++) {
+            if (Integer.parseInt(questionsArr[j]) % 2 == 0) {
+                answersArr[j] = "yes";
             } else {
-                rightAnswer = "no";
-            }
-
-            if (currentAnswer.equals(rightAnswer)) {
-                System.out.println("Correct!");
-                rightAnswersCount++;
-            } else {
-                System.out.printf("'%s' is wrong answer ;(. Correct answer was %s.%n", currentAnswer, rightAnswer);
-                System.out.println("Let's try again, " + userName + "!");
-                break;
+                answersArr[j] = "no";
             }
         }
-        if (rightAnswersCount >= 3) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        Engine.gameEngine(questionsArr, answersArr, description);
     }
 }
