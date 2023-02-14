@@ -11,7 +11,7 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(description);
 
-        int gamesCount = answersArr.length;
+        int gamesCount = 3;
         int gamesCounter = 0;
 
         for (int i = 0; i < gamesCount; i++) {
