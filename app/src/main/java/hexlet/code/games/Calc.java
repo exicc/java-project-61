@@ -46,10 +46,18 @@ public class Calc {
             int number2 = Integer.parseInt(questionsArrPre[counter + NEXT_CHAR]);
             int result = 0;
             switch (operator) {
-                case "+" -> result = number1 + number2;
-                case "-" -> result = number1 - number2;
-                case "*" -> result = number1 * number2;
-                default -> System.out.println("Error");
+                case "+":
+                    result = number1 + number2;
+                    break;
+                case "-":
+                    result = number1 - number2;
+                    break;
+                case "*":
+                    result = number1 * number2;
+                    break;
+                default:
+                    System.out.println("Error");
+                    break;
             }
             answersArr[j] = String.valueOf(result);
             counter += ROUNDS_COUNT;
