@@ -11,3 +11,5 @@
 [GCD example](https://asciinema.org/a/UFIUgwCDiOM6lJrz1HtQmNQWd)
 
 [Progression example](https://asciinema.org/a/RvWMsXA2CGmZum0UVLJZT1Y1F)
+
+[Prime example](https://asciinema.org/a/yyJaM2OespXVQmi2DfIRbfvKh)
