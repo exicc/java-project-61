@@ -6,14 +6,15 @@ import java.util.Random;
 
 public class GCD {
     static final int ROUNDS_COUNT = 3;
+    static final int MAX_RND_NUMBER = 100;
 
-    public static void GCDGame() {
+    public static void gcdGame() {
 
         String description = "Find the greatest common divisor of given numbers.";
 
         int[] numbersArr = new int[ROUNDS_COUNT * 2];
         for (int j = 0; j < ROUNDS_COUNT * 2; j++) {
-            int rnd = new Random().nextInt(100);
+            int rnd = new Random().nextInt(MAX_RND_NUMBER);
             numbersArr[j] = (rnd);
         }
 

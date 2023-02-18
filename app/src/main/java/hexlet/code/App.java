@@ -28,7 +28,7 @@ public class App {
             case "1" -> Greeting.userGreeting();
             case "2" -> Even.isEvenGame();
             case "3" -> Calc.calcGame();
-            case "4" -> GCD.GCDGame();
+            case "4" -> GCD.gcdGame();
             case "5" -> Progression.progressionGame();
             case "6" -> Prime.isPrimeGame();
             case "0" -> System.out.println("Exit successful");

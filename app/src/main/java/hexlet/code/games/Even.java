@@ -6,6 +6,7 @@ import java.util.Random;
 
 public class Even {
     static final int ROUNDS_COUNT = 3;
+    static final int MAX_RND_NUMBER = 10;
 
     public static void isEvenGame() {
 
@@ -13,7 +14,7 @@ public class Even {
 
         String[] questionsArr = new String[ROUNDS_COUNT];
         for (int j = 0; j < ROUNDS_COUNT; j++) {
-            int rnd = new Random().nextInt(10);
+            int rnd = new Random().nextInt(MAX_RND_NUMBER);
             questionsArr[j] = String.valueOf(rnd);
         }
 
