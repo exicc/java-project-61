@@ -6,14 +6,16 @@ import java.math.BigInteger;
 
 public class Prime {
     static final int ROUNDS_COUNT = 3;
+    static final int HUNDRED = 100;
 
     public static void isPrimeGame() {
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[] questionsArr = new String[ROUNDS_COUNT];
         String[] answersArr = new String[ROUNDS_COUNT];
-
+        int max = 20;
+        int min = 1;
         for (int i = 0; i < ROUNDS_COUNT; i++) {
-            int rnd = (int) (Math.random() * (20) + 1);
+            int rnd = (int) (Math.random() * (max) + min);
             questionsArr[i] = String.valueOf(rnd);
         }
 
@@ -29,6 +31,6 @@ public class Prime {
 
     public static boolean isPrime(int number) {
         BigInteger bigInt = BigInteger.valueOf(number);
-        return bigInt.isProbablePrime(100);
+        return bigInt.isProbablePrime(HUNDRED);
     }
 }

@@ -7,7 +7,7 @@ import java.util.Random;
 public class GCD {
     static final int ROUNDS_COUNT = 3;
 
-    public static void GCD_game() {
+    public static void GCDGame() {
 
         String description = "Find the greatest common divisor of given numbers.";
 

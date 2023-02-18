@@ -7,12 +7,14 @@ import java.util.Random;
 
 public class Calc {
     static final int ROUNDS_COUNT = 3;
+    static final int TRIPLE_ROUNDS_COUNT = ROUNDS_COUNT * 3;
+    static int counter = 0;
 
     public static void calcGame() {
         String description = "What is the result of the expression?";
 
-        int[] numbersArr = new int[ROUNDS_COUNT * 3];
-        for (int j = 0; j < ROUNDS_COUNT * 3; j++) {
+        int[] numbersArr = new int[TRIPLE_ROUNDS_COUNT];
+        for (int j = 0; j < TRIPLE_ROUNDS_COUNT; j++) {
             int rnd = new Random().nextInt(10);
             numbersArr[j] = (rnd);
         }
@@ -20,8 +22,7 @@ public class Calc {
         char[] operatorsArr = {'+', '-', '*'};
         String[] answersArr = new String[ROUNDS_COUNT];
 
-        int counter = 0;
-        String[] questionsArrPre = new String[ROUNDS_COUNT * 3];
+        String[] questionsArrPre = new String[TRIPLE_ROUNDS_COUNT];
         for (int i = 0; i < ROUNDS_COUNT; i++) {
             char operator = getRandomChar(operatorsArr);
             int number1 = getRandom(numbersArr);
@@ -43,6 +44,7 @@ public class Calc {
                 case "+" -> answersArr[j] = String.valueOf(number1 + number2);
                 case "-" -> answersArr[j] = String.valueOf(number1 - number2);
                 case "*" -> answersArr[j] = String.valueOf(number1 * number2);
+                default -> System.out.println("Error");
             }
             counter += 3;
         }

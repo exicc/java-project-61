@@ -14,11 +14,16 @@ public class Progression {
         final int progressionLen = (int) (Math.random() * ((10 - 5) + 1)) + 5;
         String[] questionsArr = new String[ROUNDS_COUNT];
         String[] answersArr = new String[ROUNDS_COUNT];
+        final int startNumMax = 50;
+        final int startNumMin = 5;
+        final int magCounterMax = 5;
+        final int magCounterMin = 1;
+        final int elementToHideMin = 5;
 
         for (int i = 0; i < ROUNDS_COUNT; i++) {
-            int startNum = (int) (Math.random() * ((50 - 5) + 1)) + 5;
-            int magCounter = (int) (Math.random() * ((5 - 1) + 1)) + 1;
-            int elementToHide = (int) (Math.random() * ((progressionLen - 5)));
+            int startNum = (int) (Math.random() * ((startNumMax - startNumMin) + 1)) + startNumMin;
+            int magCounter = (int) (Math.random() * ((magCounterMax - magCounterMin) + 1)) + magCounterMin;
+            int elementToHide = (int) (Math.random() * ((progressionLen - elementToHideMin)));
             String[] tempArr = new String[progressionLen];
 
             for (int j = 0; j < progressionLen; j++) {
@@ -28,7 +33,8 @@ public class Progression {
             Arrays.sort(tempArr);
             answersArr[i] = tempArr[elementToHide];
             tempArr[elementToHide] = "..";
-            questionsArr[i] = Arrays.toString(tempArr).replaceAll("[\\[\\]\"]", "").replace(',', ' ').replace("  ", " ");
+            String s = Arrays.toString(tempArr).replaceAll("[\\[\\]\"]", "").replace(',', ' ').replace("  ", " ");
+            questionsArr[i] = s;
         }
         Engine.gameEngine(questionsArr, answersArr, description);
     }

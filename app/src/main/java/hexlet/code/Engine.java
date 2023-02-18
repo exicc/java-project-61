@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+    final static int gamesCount = 3;
     public static void gameEngine(String[] questionsArr, String[] answersArr, String description) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Brain Games!");
@@ -11,7 +12,6 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(description);
 
-        int gamesCount = 3;
         int gamesCounter = 0;
 
         for (int i = 0; i < gamesCount; i++) {
@@ -22,11 +22,12 @@ public class Engine {
                 System.out.println("Correct!");
                 gamesCounter++;
             } else {
-                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!%n", answer, answersArr[i], name);
+                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n" +
+                        "Let's try again, %s!%n", answer, answersArr[i], name);
                 break;
             }
         }
-        if (gamesCounter >= 3) {
+        if (gamesCounter >= gamesCount) {
             System.out.println("Congratulations, " + name + "!");
         }
     }
