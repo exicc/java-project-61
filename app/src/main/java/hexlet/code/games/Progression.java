@@ -28,7 +28,7 @@ public class Progression {
             Arrays.sort(tempArr);
             answersArr[i] = tempArr[elementToHide];
             tempArr[elementToHide] = "..";
-            questionsArr[i] = Arrays.toString(tempArr).replaceAll("[\\[\\]\"]", "").replace(',', ' ');
+            questionsArr[i] = Arrays.toString(tempArr).replaceAll("[\\[\\]\"]", "").replace(',', ' ').replace("  ", " ");
         }
         Engine.gameEngine(questionsArr, answersArr, description);
     }
