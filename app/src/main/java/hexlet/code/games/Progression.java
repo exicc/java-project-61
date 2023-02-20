@@ -20,7 +20,9 @@ public class Progression {
         String description = "What number is missing in the progression?";
 
         Random rand = new Random();
-        int progressionSize = rand.nextInt((MAX_PROGRESSION_SIZE - MIN_PROGRESSION_SIZE) + 1) + MIN_PROGRESSION_SIZE;
+        int progressionSize = rand.nextInt(
+                (MAX_PROGRESSION_SIZE - MIN_PROGRESSION_SIZE) + 1)
+                + MIN_PROGRESSION_SIZE;
 
 
         String[] questionsArr = new String[ROUNDS_COUNT];
@@ -29,8 +31,12 @@ public class Progression {
 
         for (int i = 0; i < ROUNDS_COUNT; i++) {
 
-            int progressionStep = rand.nextInt((PROGRESSION_STEP_MAX_VALUE - PROGRESSION_STEP_MIN_VALUE) + 1) + PROGRESSION_STEP_MIN_VALUE;
-            int startElement = rand.nextInt((START_ELEMENT_MAX_VALUE - START_ELEMENT_MIN_VALUE) + 1) + START_ELEMENT_MIN_VALUE;
+            int progressionStep = rand.nextInt(
+                    (PROGRESSION_STEP_MAX_VALUE - PROGRESSION_STEP_MIN_VALUE) + 1)
+                    + PROGRESSION_STEP_MIN_VALUE;
+            int startElement = rand.nextInt(
+                    (START_ELEMENT_MAX_VALUE - START_ELEMENT_MIN_VALUE) + 1)
+                    + START_ELEMENT_MIN_VALUE;
             int elementToHide = rand.nextInt(progressionSize);
             String[] tempArr = new String[progressionSize];
 
@@ -41,7 +47,10 @@ public class Progression {
             }
             answersArr[i] = tempArr[elementToHide];
             tempArr[elementToHide] = "..";
-            String s = Arrays.toString(tempArr).replaceAll("[\\[\\]\"]", "").replace(',', ' ').replace("  ", " ");
+            String s = Arrays.toString(tempArr)
+                    .replaceAll("[\\[\\]\"]", "")
+                    .replace(',', ' ')
+                    .replace("  ", " ");
             questionsArr[i] = s;
         }
         Engine.gameEngine(questionsArr, answersArr, description);
