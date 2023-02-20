@@ -4,33 +4,41 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Progression {
     static final int ROUNDS_COUNT = 3;
+    static final int PROGRESSION_STEP_MAX_VALUE = 10;
+    static final int PROGRESSION_STEP_MIN_VALUE = 1;
+    static final int START_ELEMENT_MAX_VALUE = 50;
+    static final int START_ELEMENT_MIN_VALUE = 5;
+    static final int MIN_PROGRESSION_SIZE = 5;
+    static final int MAX_PROGRESSION_SIZE = 10;
 
     public static void progressionGame() {
 
         String description = "What number is missing in the progression?";
-        final int progressionLen = (int) (Math.random() * ((10 - 5) + 1)) + 5;
+
+        Random rand = new Random();
+        int progressionSize = rand.nextInt((MAX_PROGRESSION_SIZE - MIN_PROGRESSION_SIZE) + 1) + MIN_PROGRESSION_SIZE;
+
+
         String[] questionsArr = new String[ROUNDS_COUNT];
         String[] answersArr = new String[ROUNDS_COUNT];
-        final int startNumMax = 50;
-        final int startNumMin = 5;
-        final int magCounterMax = 5;
-        final int magCounterMin = 1;
-        final int elementToHideMin = 5;
+
 
         for (int i = 0; i < ROUNDS_COUNT; i++) {
-            int startNum = (int) (Math.random() * ((startNumMax - startNumMin) + 1)) + startNumMin;
-            int magCounter = (int) (Math.random() * ((magCounterMax - magCounterMin) + 1)) + magCounterMin;
-            int elementToHide = (int) (Math.random() * ((progressionLen - elementToHideMin)));
-            String[] tempArr = new String[progressionLen];
 
-            for (int j = 0; j < progressionLen; j++) {
-                tempArr[j] = String.valueOf(startNum + magCounter);
-                startNum += magCounter;
+            int progressionStep = rand.nextInt((PROGRESSION_STEP_MAX_VALUE - PROGRESSION_STEP_MIN_VALUE) + 1) + PROGRESSION_STEP_MIN_VALUE;
+            int startElement = rand.nextInt((START_ELEMENT_MAX_VALUE - START_ELEMENT_MIN_VALUE) + 1) + START_ELEMENT_MIN_VALUE;
+            int elementToHide = rand.nextInt(progressionSize);
+            String[] tempArr = new String[progressionSize];
+
+            for (int j = 0; j < progressionSize; j++) {
+
+                tempArr[j] = String.valueOf(startElement);
+                startElement += progressionStep;
             }
-            Arrays.sort(tempArr);
             answersArr[i] = tempArr[elementToHide];
             tempArr[elementToHide] = "..";
             String s = Arrays.toString(tempArr).replaceAll("[\\[\\]\"]", "").replace(',', ' ').replace("  ", " ");
