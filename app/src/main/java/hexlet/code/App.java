@@ -14,7 +14,7 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
-                Please enter the gameNumber number and press Enter.
+                Please enter the game number and press Enter.
                 1 - Greet
                 2 - Even
                 3 - Calc
@@ -32,7 +32,7 @@ public class App {
             case "5" -> Progression.progressionGame();
             case "6" -> Prime.isPrimeGame();
             case "0" -> System.out.println("Exit successful");
-            default -> System.out.println("Unexpected value: " + gameNumber);
+            default -> System.out.println("Unexpected value: " + gameNumber + "\nExiting.");
         }
         scanner.close();
     }
