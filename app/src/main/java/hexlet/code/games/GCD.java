@@ -6,38 +6,31 @@ import java.util.Random;
 
 public class GCD {
     static final int ROUNDS_COUNT = 3;
-    static final int MAX_RND_NUMBER = 100;
+    static final int NUMBERS_MAX_VALUE = 100;
 
     public static void gcdGame() {
 
         String description = "Find the greatest common divisor of given numbers.";
 
-        int[] numbersArr = new int[ROUNDS_COUNT * 2];
-        for (int j = 0; j < ROUNDS_COUNT * 2; j++) {
-            int rnd = new Random().nextInt(MAX_RND_NUMBER);
-            numbersArr[j] = (rnd);
-        }
-
-        int counter = 0;
         String[] answersArr = new String[ROUNDS_COUNT];
-        for (int i = 0; i < answersArr.length; i++) {
-            answersArr[i] = String.valueOf(gcdByEuclidsAlgorithm(numbersArr[counter], numbersArr[counter + 1]));
-            counter += 2;
-        }
-
-        counter = 0;
         String[] questionsArr = new String[ROUNDS_COUNT];
+        Random rand = new Random();
+
         for (int i = 0; i < ROUNDS_COUNT; i++) {
-            questionsArr[i] = numbersArr[counter] + " " + numbersArr[counter + 1];
-            counter += 2;
+
+            int firstNumber = rand.nextInt(NUMBERS_MAX_VALUE);
+            int secondNumber = rand.nextInt(NUMBERS_MAX_VALUE);
+
+            questionsArr[i] = firstNumber + " " + secondNumber;
+            answersArr[i] = String.valueOf(gcdByEuclidesAlgorithm(firstNumber, secondNumber));
         }
         Engine.gameEngine(questionsArr, answersArr, description);
     }
 
-    static int gcdByEuclidsAlgorithm(int n1, int n2) {
+    static int gcdByEuclidesAlgorithm(int n1, int n2) {
         if (n2 == 0) {
             return n1;
         }
-        return gcdByEuclidsAlgorithm(n2, n1 % n2);
+        return gcdByEuclidesAlgorithm(n2, n1 % n2);
     }
 }
