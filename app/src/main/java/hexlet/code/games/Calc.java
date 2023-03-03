@@ -15,7 +15,7 @@ public class Calc {
         String[] questionsArr = new String[ROUNDS_NUMBER];
         String[] answersArr = new String[ROUNDS_NUMBER];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ROUNDS_NUMBER; i++) {
             int firstNumber = RandomGen.getRandomNumber(NUMBERS_MAX_VALUE);
             int secondNumber = RandomGen.getRandomNumber(NUMBERS_MAX_VALUE);
             int chosenOperator = RandomGen.getRandomNumber(QUANTITY_OF_OPERATORS);
