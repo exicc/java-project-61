@@ -1,48 +1,48 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
+import hexlet.code.RandomGen;
 
 
 public class Calc {
+    static final int ROUNDS_NUMBER = Engine.getRoundsCount();
+    static final int NUMBERS_MAX_VALUE = 20;
+    static final String[] OPERATORS_ARR = new String[]{"+", "-", "*"};
+    static final int QUANTITY_OF_OPERATORS = OPERATORS_ARR.length;
+    static final String DESCRIPTION = "What is the result of the expression?";
 
-    static final int ROUNDS_COUNT = 3;
-    static final int NUMBERS_MAX_VALUE = 50;
-    static final int NUMBER_OF_OPERATORS = 3;
     public static void calcGame() {
+        // TODO выяснить, что имелось в виду под new String[] {question,answer}
+        String[] questionsArr = new String[ROUNDS_NUMBER];
+        String[] answersArr = new String[ROUNDS_NUMBER];
 
-        String description = "What is the result of the expression?";
+        for (int i = 0; i < 3; i++) {
+            int firstNumber = RandomGen.getRandomNumber(NUMBERS_MAX_VALUE);
+            int secondNumber = RandomGen.getRandomNumber(NUMBERS_MAX_VALUE);
+            int chosenOperator = RandomGen.getRandomNumber(QUANTITY_OF_OPERATORS);
+            String currentOperator = OPERATORS_ARR[chosenOperator];
 
-        String[] questionsArr = new String[ROUNDS_COUNT];
-        String[] answersArr = new String[ROUNDS_COUNT];
-
-        Random rand = new Random();
-
-        String[] operatorsArr = new String[]{"+", "-", "*"};
-
-        for (int i = 0; i < ROUNDS_COUNT; i++) {
-            int firstNumber = rand.nextInt(NUMBERS_MAX_VALUE);
-            int secondNumber = rand.nextInt(NUMBERS_MAX_VALUE);
-            int chosenOperator = rand.nextInt(NUMBER_OF_OPERATORS);
-            switch (chosenOperator) {
-                case 0:
-                    questionsArr[i] = (firstNumber + " " + operatorsArr[0] + " " + secondNumber);
-                    answersArr[i] = String.valueOf(firstNumber + secondNumber);
-                    break;
-                case 1:
-                    questionsArr[i] = (firstNumber + " " + operatorsArr[1] + " " + secondNumber);
-                    answersArr[i] = String.valueOf(firstNumber - secondNumber);
-                    break;
-                case 2:
-                    questionsArr[i] = (firstNumber + " " + operatorsArr[2] + " " + secondNumber);
-                    answersArr[i] = String.valueOf(firstNumber * secondNumber);
-                    break;
-                default:
-                    System.out.println("Error: operatorsArr value >= 3");
-                    break;
+            questionsArr[i] = firstNumber + " " + currentOperator + " " + secondNumber;
+            answersArr[i] = String.valueOf(calculate(currentOperator, firstNumber, secondNumber));
+        }
+        Engine.gameEngine(questionsArr, answersArr, DESCRIPTION);
+    }
+    public static int calculate(String operator, int firstNumber, int secondNumber) {
+        int result = 0;
+        switch (operator) {
+            case "+" -> {
+                return firstNumber + secondNumber;
+            }
+            case "-" -> {
+                return firstNumber - secondNumber;
+            }
+            case "*" -> {
+                return firstNumber * secondNumber;
+            }
+            default -> {
+                System.out.println("Unknown operator.");
+                return result;
             }
         }
-        Engine.gameEngine(questionsArr, answersArr, description);
     }
 }

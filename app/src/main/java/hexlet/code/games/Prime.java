@@ -5,13 +5,14 @@ import hexlet.code.Engine;
 import java.math.BigInteger;
 
 public class Prime {
-    static final int ROUNDS_COUNT = 3;
+    static final int ROUNDS_COUNT = Engine.getRoundsCount();
     static final int HUNDRED = 100;
     static final int MAX_RAND_VALUE = 20;
     static final int MIN_RAND_VALUE = 1;
+    static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void isPrimeGame() {
-        String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
         String[] questionsArr = new String[ROUNDS_COUNT];
         String[] answersArr = new String[ROUNDS_COUNT];
 
@@ -27,7 +28,7 @@ public class Prime {
                 answersArr[i] = "no";
             }
         }
-        Engine.gameEngine(questionsArr, answersArr, description);
+        Engine.gameEngine(questionsArr, answersArr, DESCRIPTION);
     }
 
     public static boolean isPrime(int number) {

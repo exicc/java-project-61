@@ -5,12 +5,12 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class GCD {
-    static final int ROUNDS_COUNT = 3;
+    static final int ROUNDS_COUNT = Engine.getRoundsCount();
     static final int NUMBERS_MAX_VALUE = 100;
+    static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
     public static void gcdGame() {
 
-        String description = "Find the greatest common divisor of given numbers.";
 
         String[] answersArr = new String[ROUNDS_COUNT];
         String[] questionsArr = new String[ROUNDS_COUNT];
@@ -24,7 +24,7 @@ public class GCD {
             questionsArr[i] = firstNumber + " " + secondNumber;
             answersArr[i] = String.valueOf(gcdByEuclidesAlgorithm(firstNumber, secondNumber));
         }
-        Engine.gameEngine(questionsArr, answersArr, description);
+        Engine.gameEngine(questionsArr, answersArr, DESCRIPTION);
     }
 
     static int gcdByEuclidesAlgorithm(int n1, int n2) {
