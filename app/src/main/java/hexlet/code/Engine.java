@@ -27,6 +27,7 @@ public class Engine {
         }
         System.out.println("Congratulations, " + name + "!");
     }
+
     public static void gameEngine() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Brain Games!");
@@ -34,6 +35,7 @@ public class Engine {
         String name = scanner.next();
         System.out.println("Hello, " + name + "!");
     }
+
     public static int getRoundsCount() {
         return ROUNDS_COUNT;
     }

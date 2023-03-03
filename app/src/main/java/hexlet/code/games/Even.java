@@ -12,7 +12,6 @@ public class Even {
     public static void isEvenGame() {
 
 
-
         String[] questionsArr = new String[ROUNDS_COUNT];
         for (int j = 0; j < ROUNDS_COUNT; j++) {
             int rnd = RandomGen.getRandomNumber(MAX_RND_NUMBER);

@@ -12,7 +12,6 @@ public class Calc {
     static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void calcGame() {
-        // TODO выяснить, что имелось в виду под new String[] {question,answer}
         String[] questionsArr = new String[ROUNDS_NUMBER];
         String[] answersArr = new String[ROUNDS_NUMBER];
 
@@ -27,6 +26,7 @@ public class Calc {
         }
         Engine.gameEngine(questionsArr, answersArr, DESCRIPTION);
     }
+
     public static int calculate(String operator, int firstNumber, int secondNumber) {
         int result = 0;
         switch (operator) {

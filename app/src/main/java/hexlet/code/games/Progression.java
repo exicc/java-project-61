@@ -19,7 +19,6 @@ public class Progression {
     public static void progressionGame() {
 
 
-
         int progressionSize = RandomGen.getRandomNumbersInRange(MAX_PROGRESSION_SIZE,
                 MIN_PROGRESSION_SIZE);
 
@@ -31,19 +30,14 @@ public class Progression {
 
             int progressionStep = RandomGen.getRandomNumbersInRange(PROGRESSION_STEP_MAX_VALUE,
                     PROGRESSION_STEP_MIN_VALUE);
-
             int startElement = RandomGen.getRandomNumbersInRange(START_ELEMENT_MAX_VALUE,
                     START_ELEMENT_MIN_VALUE);
-
             int elementToHide = RandomGen.getRandomNumber(progressionSize);
 
-            String[] tempArr = new String[progressionSize];
+            String[] tempArr;
 
-            for (int j = 0; j < progressionSize; j++) {
+            tempArr = progressionGeneration(startElement, progressionSize, progressionStep);
 
-                tempArr[j] = String.valueOf(startElement);
-                startElement += progressionStep;
-            }
             answersArr[i] = tempArr[elementToHide];
             tempArr[elementToHide] = "..";
             String s = Arrays.toString(tempArr)
@@ -54,6 +48,13 @@ public class Progression {
         }
         Engine.gameEngine(questionsArr, answersArr, DESCRIPTION);
     }
-    // TODO реализовать генерацию прогрессии в функции
-    //public static progressionGeneration()
+
+    public static String[] progressionGeneration(int startElement, int progressionSize, int progressionStep) {
+        String[] tempArr = new String[progressionSize];
+        for (int i = 0; i < progressionSize; i++) {
+            tempArr[i] = String.valueOf(startElement);
+            startElement += progressionStep;
+        }
+        return tempArr;
+    }
 }
