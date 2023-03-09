@@ -27,7 +27,7 @@ public class Engine {
         }
         System.out.println("Congratulations, " + name + "!");
     }
-
+    // Метод без параметров используется для приветствия под номером 1 из App
     public static void gameEngine() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Brain Games!");

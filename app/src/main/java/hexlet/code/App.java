@@ -1,10 +1,9 @@
 package hexlet.code;
 
 
-
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
-import hexlet.code.games.GCD;
+import hexlet.code.games.Gcd;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
@@ -28,7 +27,7 @@ public class App {
             case "1" -> Engine.gameEngine();
             case "2" -> Even.isEvenGame();
             case "3" -> Calc.calcGame();
-            case "4" -> GCD.gcdGame();
+            case "4" -> Gcd.gcdGame();
             case "5" -> Progression.progressionGame();
             case "6" -> Prime.isPrimeGame();
             case "0" -> System.out.println("Exit successful");
