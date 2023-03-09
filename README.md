@@ -5,12 +5,17 @@
 
 ### ASCIInema's:
 
-[Even example](https://asciinema.org/a/SqS2ZcIUyWcAEGku1F9bTW4G5)
+Even example
+[![asciicast](https://asciinema.org/a/SqS2ZcIUyWcAEGku1F9bTW4G5.svg)](https://asciinema.org/a/SqS2ZcIUyWcAEGku1F9bTW4G5)
 
-[Calc example](https://asciinema.org/a/LRWfJM2H5iHtPWDKTNaFadE2q)
+Calc example
+[![asciicast](https://asciinema.org/a/LRWfJM2H5iHtPWDKTNaFadE2q.svg)](https://asciinema.org/a/LRWfJM2H5iHtPWDKTNaFadE2q)
 
-[GCD example](https://asciinema.org/a/UFIUgwCDiOM6lJrz1HtQmNQWd)
+GCD example
+[![asciicast](https://asciinema.org/a/UFIUgwCDiOM6lJrz1HtQmNQWd.svg)](https://asciinema.org/a/UFIUgwCDiOM6lJrz1HtQmNQWd)
 
-[Progression example](https://asciinema.org/a/RvWMsXA2CGmZum0UVLJZT1Y1F)
+Progression example
+[![asciicast](https://asciinema.org/a/RvWMsXA2CGmZum0UVLJZT1Y1F.svg)](https://asciinema.org/a/RvWMsXA2CGmZum0UVLJZT1Y1F)
 
-[Prime example](https://asciinema.org/a/yyJaM2OespXVQmi2DfIRbfvKh)
+Prime example
+[![asciicast](https://asciinema.org/a/yyJaM2OespXVQmi2DfIRbfvKh.svg)](https://asciinema.org/a/yyJaM2OespXVQmi2DfIRbfvKh)
