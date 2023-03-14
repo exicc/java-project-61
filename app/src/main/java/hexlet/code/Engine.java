@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    static final int ROUNDS_COUNT = 3;
+    public static final int ROUNDS_COUNT = 3;
 
     public static void gameEngine(String[] questionsArr, String[] answersArr, String description) {
         Scanner scanner = new Scanner(System.in);
@@ -27,6 +27,7 @@ public class Engine {
         }
         System.out.println("Congratulations, " + name + "!");
     }
+
     // Метод без параметров используется для приветствия под номером 1 из App
     public static void gameEngine() {
         Scanner scanner = new Scanner(System.in);
@@ -34,9 +35,5 @@ public class Engine {
         System.out.print("May I have your name? ");
         String name = scanner.next();
         System.out.println("Hello, " + name + "!");
-    }
-
-    public static int getRoundsCount() {
-        return ROUNDS_COUNT;
     }
 }

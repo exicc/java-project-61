@@ -1,24 +1,24 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.RandomGen;
+import hexlet.code.Utils;
 
 
 public class Calc {
-    static final int ROUNDS_NUMBER = Engine.getRoundsCount();
+
     static final int NUMBERS_MAX_VALUE = 20;
     static final String[] OPERATORS_ARR = new String[]{"+", "-", "*"};
     static final int QUANTITY_OF_OPERATORS = OPERATORS_ARR.length;
     static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void calcGame() {
-        String[] questionsArr = new String[ROUNDS_NUMBER];
-        String[] answersArr = new String[ROUNDS_NUMBER];
+        String[] questionsArr = new String[Engine.ROUNDS_COUNT];
+        String[] answersArr = new String[Engine.ROUNDS_COUNT];
 
-        for (int i = 0; i < ROUNDS_NUMBER; i++) {
-            int firstNumber = RandomGen.getRandomNumber(NUMBERS_MAX_VALUE);
-            int secondNumber = RandomGen.getRandomNumber(NUMBERS_MAX_VALUE);
-            int chosenOperator = RandomGen.getRandomNumber(QUANTITY_OF_OPERATORS);
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            int firstNumber = Utils.generateNumber(NUMBERS_MAX_VALUE);
+            int secondNumber = Utils.generateNumber(NUMBERS_MAX_VALUE);
+            int chosenOperator = Utils.generateNumber(QUANTITY_OF_OPERATORS);
             String currentOperator = OPERATORS_ARR[chosenOperator];
 
             questionsArr[i] = firstNumber + " " + currentOperator + " " + secondNumber;
