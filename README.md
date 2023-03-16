@@ -3,6 +3,9 @@
 [![Actions Status](https://github.com/exicc/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/exicc/java-project-61/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f4ed57ac46ee52dc4dde/maintainability)](https://codeclimate.com/github/exicc/java-project-61/maintainability)
 
+
+## Hi! This is a simple console game written during the execution of the Hexlet project #1. It consists of 5 simple games with numbers examples of which are presented below.
+
 ### ASCIInema's:
 
 Even example
