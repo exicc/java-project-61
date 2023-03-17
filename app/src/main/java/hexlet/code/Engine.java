@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine {
     public static final int ROUNDS_COUNT = 3;
 
-    public static void gameEngine(String[][] qNaArr, String description) {
+    public static void gameEngine(String[][] questionsAndAnswers, String description) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -13,7 +13,7 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(description);
 
-        for (String[] item : qNaArr) {
+        for (String[] item : questionsAndAnswers) {
             //for (int i = 0; i < ROUNDS_COUNT; i++) {
             System.out.println("Question: " + item[0]);
             System.out.print("Your answer: ");

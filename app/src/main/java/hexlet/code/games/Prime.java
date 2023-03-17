@@ -12,18 +12,18 @@ public class Prime {
 
     public static void isPrimeGame() {
 
-        String[][] qNaArr = new String[Engine.ROUNDS_COUNT][Engine.ROUNDS_COUNT - 1];
+        String[][] questionsAndAnswers = new String[Engine.ROUNDS_COUNT][Engine.ROUNDS_COUNT - 1];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int rnd = Utils.generateNumberInRange(MIN_RAND_VALUE, MAX_RAND_VALUE);
-            qNaArr[i][0] = String.valueOf(rnd);
-            if (isPrime(Integer.parseInt(qNaArr[i][0]))) {
-                qNaArr[i][1] = "yes";
+            questionsAndAnswers[i][0] = String.valueOf(rnd);
+            if (isPrime(Integer.parseInt(questionsAndAnswers[i][0]))) {
+                questionsAndAnswers[i][1] = "yes";
             } else {
-                qNaArr[i][1] = "no";
+                questionsAndAnswers[i][1] = "no";
             }
         }
-        Engine.gameEngine(qNaArr, DESCRIPTION);
+        Engine.gameEngine(questionsAndAnswers, DESCRIPTION);
     }
 
     static boolean isPrime(int number) {

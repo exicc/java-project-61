@@ -13,7 +13,7 @@ public class Calc {
 
     public static void calcGame() {
 
-        String[][] qNaArr = new String[Engine.ROUNDS_COUNT][Engine.ROUNDS_COUNT - 1];
+        String[][] questionsAndAnswers = new String[Engine.ROUNDS_COUNT][Engine.ROUNDS_COUNT - 1];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int firstNumber = Utils.generateNumber(NUMBERS_MAX_VALUE);
@@ -21,10 +21,10 @@ public class Calc {
             int chosenOperator = Utils.generateNumber(QUANTITY_OF_OPERATORS);
             String currentOperator = OPERATORS_ARR[chosenOperator];
 
-            qNaArr[i][0] = firstNumber + " " + currentOperator + " " + secondNumber;
-            qNaArr[i][1] = String.valueOf(calculate(currentOperator, firstNumber, secondNumber));
+            questionsAndAnswers[i][0] = firstNumber + " " + currentOperator + " " + secondNumber;
+            questionsAndAnswers[i][1] = String.valueOf(calculate(currentOperator, firstNumber, secondNumber));
         }
-        Engine.gameEngine(qNaArr, DESCRIPTION);
+        Engine.gameEngine(questionsAndAnswers, DESCRIPTION);
     }
 
     public static int calculate(String operator, int firstNumber, int secondNumber) {
@@ -40,7 +40,7 @@ public class Calc {
                 return firstNumber * secondNumber;
             }
             default -> {
-                System.out.println("Unknown operator.");
+                System.out.println("Unknown operator: " + operator);
                 return result;
             }
         }
