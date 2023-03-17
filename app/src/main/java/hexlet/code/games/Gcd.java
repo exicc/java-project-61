@@ -11,18 +11,17 @@ public class Gcd {
 
     public static void gcdGame() {
 
-        String[] answersArr = new String[Engine.ROUNDS_COUNT];
-        String[] questionsArr = new String[Engine.ROUNDS_COUNT];
+        String[][] qNaArr = new String[Engine.ROUNDS_COUNT][Engine.ROUNDS_COUNT - 1];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
 
             int firstNumber = Utils.generateNumber(NUMBERS_MAX_VALUE);
             int secondNumber = Utils.generateNumber(NUMBERS_MAX_VALUE);
 
-            questionsArr[i] = firstNumber + " " + secondNumber;
-            answersArr[i] = String.valueOf(gcdByEuclidesAlgorithm(firstNumber, secondNumber));
+            qNaArr[i][0] = firstNumber + " " + secondNumber;
+            qNaArr[i][1] = String.valueOf(gcdByEuclidesAlgorithm(firstNumber, secondNumber));
         }
-        Engine.gameEngine(questionsArr, answersArr, DESCRIPTION);
+        Engine.gameEngine(qNaArr, DESCRIPTION);
     }
 
     static int gcdByEuclidesAlgorithm(int n1, int n2) {

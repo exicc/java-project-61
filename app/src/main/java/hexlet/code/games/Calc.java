@@ -12,8 +12,8 @@ public class Calc {
     static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void calcGame() {
-        String[] questionsArr = new String[Engine.ROUNDS_COUNT];
-        String[] answersArr = new String[Engine.ROUNDS_COUNT];
+
+        String[][] qNaArr = new String[Engine.ROUNDS_COUNT][Engine.ROUNDS_COUNT - 1];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int firstNumber = Utils.generateNumber(NUMBERS_MAX_VALUE);
@@ -21,10 +21,10 @@ public class Calc {
             int chosenOperator = Utils.generateNumber(QUANTITY_OF_OPERATORS);
             String currentOperator = OPERATORS_ARR[chosenOperator];
 
-            questionsArr[i] = firstNumber + " " + currentOperator + " " + secondNumber;
-            answersArr[i] = String.valueOf(calculate(currentOperator, firstNumber, secondNumber));
+            qNaArr[i][0] = firstNumber + " " + currentOperator + " " + secondNumber;
+            qNaArr[i][1] = String.valueOf(calculate(currentOperator, firstNumber, secondNumber));
         }
-        Engine.gameEngine(questionsArr, answersArr, DESCRIPTION);
+        Engine.gameEngine(qNaArr, DESCRIPTION);
     }
 
     public static int calculate(String operator, int firstNumber, int secondNumber) {

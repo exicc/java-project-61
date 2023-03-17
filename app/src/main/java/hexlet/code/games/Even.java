@@ -11,17 +11,17 @@ public class Even {
 
     public static void isEvenGame() {
 
-        String[] questionsArr = new String[Engine.ROUNDS_COUNT];
-        String[] answersArr = new String[Engine.ROUNDS_COUNT];
-        for (int j = 0; j < Engine.ROUNDS_COUNT; j++) {
-            int rnd = Utils.generateNumber(MAX_RND_NUMBER);
-            questionsArr[j] = String.valueOf(rnd);
+        String[][] qNaArr = new String[Engine.ROUNDS_COUNT][Engine.ROUNDS_COUNT - 1];
 
-            int number = Integer.parseInt(questionsArr[j]);
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            int number = Utils.generateNumber(MAX_RND_NUMBER);
+
             String answer = isEven(number) ? "yes" : "no";
-            answersArr[j] = answer;
+
+            qNaArr[i][0] = String.valueOf(number);
+            qNaArr[i][1] = answer;
         }
-        Engine.gameEngine(questionsArr, answersArr, DESCRIPTION);
+        Engine.gameEngine(qNaArr, DESCRIPTION);
     }
 
     static boolean isEven(int number) {

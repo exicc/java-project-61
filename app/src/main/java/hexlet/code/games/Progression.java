@@ -20,8 +20,7 @@ public class Progression {
         int progressionSize = Utils.generateNumberInRange(MIN_PROGRESSION_SIZE, MAX_PROGRESSION_SIZE
         );
 
-        String[] questionsArr = new String[Engine.ROUNDS_COUNT];
-        String[] answersArr = new String[Engine.ROUNDS_COUNT];
+        String[][] qNaArr = new String[Engine.ROUNDS_COUNT][Engine.ROUNDS_COUNT - 1];
 
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
@@ -32,13 +31,13 @@ public class Progression {
 
             String[] progression = makeProgression(first, progressionSize, step);
             String answer = progression[hiddenMemberIndex];
-            answersArr[i] = answer;
+            qNaArr[i][1] = answer;
             progression[hiddenMemberIndex] = "..";
             String question = String.join(" ", progression);
-            questionsArr[i] = question;
+            qNaArr[i][0] = question;
 
         }
-        Engine.gameEngine(questionsArr, answersArr, DESCRIPTION);
+        Engine.gameEngine(qNaArr, DESCRIPTION);
     }
 
     public static String[] makeProgression(int startElement, int progressionSize, int progressionStep) {
