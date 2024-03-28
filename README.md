@@ -1,12 +1,9 @@
-### Hexlet tests and linter status:
-
 [![Actions Status](https://github.com/exicc/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/exicc/java-project-61/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f4ed57ac46ee52dc4dde/maintainability)](https://codeclimate.com/github/exicc/java-project-61/maintainability)
 
-----
-## Hi! This is a simple console game written during the execution of the Hexlet project #1. It consists of 5 simple games with numbers examples of which are presented below.
 
-----
+## This is a simple console game written during the execution of the Hexlet project #1. It consists of 5 simple games with numbers examples of which are presented below.
+
 ### How to run:
 1. Open your terminal or command prompt on your computer.
    Clone the repository to your local machine by running the following command in the terminal:
